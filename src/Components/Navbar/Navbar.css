@@ -1,0 +1,165 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 2%;
+  /* position: fixed; */
+  background-color: #f3fdf9;
+  z-index: 9997;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s; /* Smooth transition for hiding/showing */
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center; /* Center the links */
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: max-height 0.3s ease;
+}
+
+.login-button {
+  margin-left: 20px; /* Space between button and links */
+}
+
+.navbar a,
+.login-button {
+  position: relative;
+  font-size: 18px;
+  color: #052417;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #052417;
+  transition: 0.3s;
+}
+
+.navbar a:hover::before,
+.login-button:hover::before {
+  width: 100%;
+}
+
+.icon-menu {
+  font-size: 28px; /* Increased size for better visibility */
+  color: #052417; /* Icon color */
+  cursor: pointer;
+  margin-left: auto; /* Push icon to the right */
+  display: flex; /* Center the icon */
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.icon-menu:hover {
+  color: #039255; /* Change color on hover for visual feedback */
+}
+
+@media (max-width: 940px) {
+  .icon-menu {
+    display: block;
+    margin-left: 15px; /* Less margin on mobile */
+  }
+
+  .header.hidden {
+    top: -70px; /* Hide the navbar off-screen */
+  }
+
+  .nav-link {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: #f3fdf9;
+    padding: 20px;
+    border-radius: 5px;
+    transition: right 0.5s ease;
+    z-index: 10;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.active .nav-link {
+    right: 0;
+  }
+
+  .nav-link a,
+  .login-button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 5px; /* Added padding for better click area */
+    border-radius: 3px; /* Slightly rounded corners */
+    transition: background 0.3s; /* Smooth background transition */
+  }
+
+  .nav-link a::before {
+    content: none; /* Disable hover line on mobile view */
+  }
+
+  .nav-link a:hover,
+  .login-button:hover {
+    background-color: #04aa6d33; /* Light green background on hover */
+    border-radius: 5px;
+  }
+
+  .login-button {
+    margin-left: 0; /* Reset margin on mobile */
+    background-color: #04aa6d; /* Primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 941px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .nav-link {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .nav-link a {
+    margin-left: 40px; /* Consistent margin for desktop view */
+  }
+}
+
+.login-button {
+  padding: 0.5rem 1rem;
+  background-color: #04aa6d; /* Primary color */
+  color: white;
+  border-color: #04aa6d;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #039255; /* Darker shade on hover */
+  border-radius: 5px;
+}

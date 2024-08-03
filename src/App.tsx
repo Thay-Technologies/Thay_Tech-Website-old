@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>App</div>
-  )
-}
+    <Router>
+      <Navbar />
+      <div className="App">
+        <Routes>
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;
