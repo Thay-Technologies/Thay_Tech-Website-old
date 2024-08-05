@@ -1,17 +1,11 @@
-import React from "react";
-import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import React from 'react'
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Router>
-      <Navbar />
-      <div className="App">
-        <Routes>
-        </Routes>
-      </div>
-    </Router>
-  );
-};
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
 
-export default App;
+export default App
