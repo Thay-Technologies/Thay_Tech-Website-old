@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add Google white background for light mode */
+body {
+    @apply bg-white text-gray-800;
+}
+
+.dark body {
+    @apply bg-gray-900 text-white;
+}
+
+/* Customize navbar for light and dark modes */
+.navbar-light {
+    @apply bg-white border-b border-gray-200;
+}
+
+.navbar-dark {
+    @apply bg-gray-900 border-b border-gray-700;
+}
