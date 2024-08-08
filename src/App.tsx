@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Navbar from './components/navbar/Navbar';
+import HomePage from './components/home/HomePage';
+import Footer from './components/footer/Footer';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div>
+      <Navbar />
+      <main>
+        <HomePage />
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
-export default App
+export default App;
